@@ -131,7 +131,7 @@ function Portfolio() {
   return (
     <section id="portfolio" className="anchor">
       <header>
-        <h2>Projects </h2>
+        <h2>Development </h2>
       </header>
       <div className="tile-wrap">
         <Tile
