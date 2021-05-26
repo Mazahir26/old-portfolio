@@ -7,54 +7,50 @@ function Contact() {
 
   useEffect(() => {
     if (status !== "") {
-      animate();
+      const tl = anime.timeline(),
+        submitBtn = document.querySelector(".submit-btn"),
+        submitText = document.querySelector(".submit-text"),
+        check = `<i class="fa fa-check"></i>`,
+        error = `<i class="fa fa-times">Error</i>`,
+        submit = `<div className="submit-text">Submit</div>`;
+
+      //Animate submit button to updated submission status
+      tl.add({
+        targets: submitText,
+        opacity: [1, 0],
+        duration: 300,
+        delay: 1000,
+      })
+        .add({
+          targets: submitBtn,
+          width: "40px",
+          begin: () => {
+            status === "SUCCESS"
+              ? (submitText.innerHTML = check)
+              : (submitText.innerHTML = error);
+          },
+        })
+        .add(
+          {
+            targets: submitText,
+            opacity: [0, 1],
+            duration: 5000,
+          },
+          "-=600"
+        )
+        .add(
+          {
+            targets: submitBtn,
+            width: "125px",
+            begin: () => {
+              submitText.innerHTML = submit;
+              setStatus("");
+            },
+          },
+          "-=1000"
+        );
     }
   }, [status]);
-
-  function animate() {
-    const tl = anime.timeline(),
-      submitBtn = document.querySelector(".submit-btn"),
-      submitText = document.querySelector(".submit-text"),
-      check = `<i class="fa fa-check"></i>`,
-      error = `<i class="fa fa-times">Error</i>`,
-      submit = `<div className="submit-text">Submit</div>`;
-
-    //Animate submit button to updated submission status
-    tl.add({
-      targets: submitText,
-      opacity: [1, 0],
-      duration: 300,
-      delay: 1000,
-    })
-      .add({
-        targets: submitBtn,
-        width: "40px",
-        begin: () => {
-          status === "SUCCESS"
-            ? (submitText.innerHTML = check)
-            : (submitText.innerHTML = error);
-        },
-      })
-      .add(
-        {
-          targets: submitText,
-          opacity: [0, 1],
-          duration: 5000,
-        },
-        "-=600"
-      )
-      .add(
-        {
-          targets: submitBtn,
-          width: "125px",
-          begin: () => {
-            submitText.innerHTML = submit;
-            setStatus("");
-          },
-        },
-        "-=1000"
-      );
-  }
 
   function handleSubmit(event) {
     event.preventDefault();
