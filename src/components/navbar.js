@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import anime from "animejs";
 import { NavLink } from "react-router-dom";
 import { routes } from "../App";
-import resume from "../img/SamanthaEalyResume.pdf";
+import resume from "../img/Resume.pdf";
 import "./styles/navbar.scss";
 
 function Navbar() {
