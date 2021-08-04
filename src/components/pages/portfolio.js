@@ -4,6 +4,7 @@ import Tile from "../tile";
 import project1 from "../../img/project_1.png";
 import project2 from "../../img/project_2.png";
 import project3 from "../../img/project_3.png";
+import project4 from "../../img/project_4.png";
 import { content } from "../content";
 import "../styles/pages/portfolio.scss";
 
@@ -134,6 +135,15 @@ function Portfolio() {
         <h2>Development </h2>
       </header>
       <div className="tile-wrap">
+      <Tile
+          func={handleClick}
+          subtitle="Stay Up to date with Fread"
+          title="Fread"
+          label="Andriod App"
+          src={project4}
+          alt="Its Open Source"
+          brief="its a Rss News app made with Expo and React-Native...."
+        />
         <Tile
           func={handleClick}
           subtitle="Forget Nothing"

@@ -1,9 +1,38 @@
 import project1 from "../img/project_1.png";
 import project2 from "../img/project_2.png";
 import project3 from "../img/project_3.png";
+import project4 from "../img/project_4.png";
+
 
 // Used for portfolio page - text revealed after clicking on tile
 const content = {
+  "Fread": `
+  <div class="portfolio-details">
+    <div class="details-header">
+      <h2 class="details-title">Fread</h2>
+      <h3 class="details-subtitle">Stay Up to date</h3>
+    </div>
+    <div>
+      <div class="details-content">
+        <img src=${project4} alt="Fread"></img>
+        <h3 >Description</h3>
+        <p>Its a Rss News app made with Expo and React-Native.</p>        
+         <h3 >Features</h3>
+         <ul>
+            <li>Synced Feeds</li>
+            <li>Saved feeds for later</li>
+            <li>Dark theme and light theme</li>
+            <li>Free and ad-free</li>
+            <li>Open Source</li>
+            <li>and much more..</li>
+         </ul>
+         <h3>Links</h3>
+         <code><a target="_blank" href="https://github.com/Mazahir26/Rss-Project-Frontend">Source Code</a></code>
+         <code><a target="_blank" href="https://github.com/Mazahir26/Rss-Project-Frontend/releases">App </a></code>
+
+      </div>
+    </div>
+  </div>`,
   "Reminder-App": `
   <div class="portfolio-details">
     <div class="details-header">
