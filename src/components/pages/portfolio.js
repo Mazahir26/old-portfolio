@@ -135,7 +135,16 @@ function Portfolio() {
         <h2>Development </h2>
       </header>
       <div className="tile-wrap">
-      <Tile
+        <Tile
+          func={handleClick}
+          subtitle="Make your blog into an app"
+          title="Blog App"
+          label="Andriod App"
+          src={project2}
+          alt="Its Open Source"
+          brief="its a project can can turn an existing blog into an App..."
+        />
+        <Tile
           func={handleClick}
           subtitle="Stay Up to date with Fread"
           title="Fread"
